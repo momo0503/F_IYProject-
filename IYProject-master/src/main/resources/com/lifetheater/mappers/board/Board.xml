@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+	<insert id="fb_insert">
+		insert into tbl_inyeon_fboard
+		values(fb_seq.nextval,#{fb_title},#{fb_cont},0,sysdate,#{fb_img_url},#{email})
+	</insert>
+	<insert id="fb_noImgInsert">
+		insert into
+		tbl_inyeon_fboard(fb_num,fb_title,fb_cont,fb_date,email)
+		values(fb_seq.nextval,#{fb_title},#{fb_cont},sysdate,#{email})
+	</insert>
+	<insert id="pb_insert">
+		insert into tbl_inyeon_pboard
+		values(pb_seq.nextval,#{pb_title},#{pb_cont},0,sysdate,#{pb_img_url},#{email})
+	</insert>
+	<insert id="pb_noImgInsert">
+		insert into
+		tbl_inyeon_pboard(pb_num,pb_title,pb_cont,pb_date,email)
+		values(pb_seq.nextval,#{pb_title},#{pb_cont},sysdate,#{email})
+	</insert>
+	<insert id="nb_insert">
+		insert into tbl_inyeon_nboard
+		values(nb_seq.nextval,#{nb_title},#{nb_cont},0,sysdate,#{nb_img_url},#{email})
+	</insert>
+	<insert id="nb_noImgInsert">
+		insert into
+		tbl_inyeon_nboard(nb_num,nb_title,nb_cont,nb_date,email)
+		values(nb_seq.nextval,#{nb_title},#{nb_cont},sysdate,#{email})
+	</insert>
+
+	<select id="selectFBCont" resultType="fbcont">
+		<!-- 게시판테이블의 제목,내용,등록날짜,조회수 + 유져테이블의 이름을 가져와대요 -->
+		<!-- 유져테이블의 이름을 가져오기위한 이메일은 게시판 테이블에있습니다. -->
+		select tbl_inyeon_fboard.fb_num,tbl_inyeon_fboard.email,tbl_inyeon_fboard.fb_title,tbl_inyeon_fboard.fb_cont,tbl_inyeon_fboard.fb_date,tbl_inyeon_fboard.fb_hit,
+		tbl_inyeon_user.name from tbl_inyeon_fboard,tbl_inyeon_user where 
+		tbl_inyeon_fboard.fb_num=#{fb_num} and tbl_inyeon_user.email=(select email from TBL_INYEON_FBOARD where fb_num=#{fb_num})
+	</select>
+	
+	<select id="selectNBCont" resultType="nbcont">
+		select tbl_inyeon_nboard.nb_num,tbl_inyeon_nboard.email,tbl_inyeon_nboard.nb_title,tbl_inyeon_nboard.nb_cont,tbl_inyeon_nboard.nb_date,tbl_inyeon_nboard.nb_hit,
+		tbl_inyeon_user.name from tbl_inyeon_nboard,tbl_inyeon_user where 
+		tbl_inyeon_nboard.nb_num=#{nb_num} and tbl_inyeon_user.email=(select email from TBL_INYEON_NBOARD where nb_num=#{nb_num})
+	</select>
+	
+	<select id="selectPBCont" resultType="pbcont">
+		select tbl_inyeon_pboard.pb_num,tbl_inyeon_pboard.email,tbl_inyeon_pboard.pb_title,tbl_inyeon_pboard.pb_cont,tbl_inyeon_pboard.pb_date,tbl_inyeon_pboard.pb_hit,
+		tbl_inyeon_user.name from tbl_inyeon_pboard,tbl_inyeon_user where 
+		tbl_inyeon_pboard.pb_num=#{pb_num} and tbl_inyeon_user.email=(select email from TBL_INYEON_PBOARD where pb_num=#{pb_num})
+	</select>
+	
+	
+	
+	<update id="fbHitUp">
+		update tbl_inyeon_fboard set fb_hit=fb_hit+1 where
+		fb_num=#{fb_num}
+	</update>
+	
+	<update id="pbHitUp">
+		update tbl_inyeon_pboard set pb_hit=pb_hit+1 where pb_num=#{pb_num} 
+	</update>
+	
+	<update id="nbHitUp">
+		update tbl_inyeon_nboard set nb_hit=nb_hit+1 where nb_num=#{nb_num} 
+	</update>
+	
+	<select id="selectFCont" resultType="fb">
+	 select * from tbl_inyeon_fboard where fb_num=#{fb_num}
+	</select>
+	
+	<select id="selectPCont" resultType="pb">
+	 select * from tbl_inyeon_pboard where pb_num=#{pb_num}
+	</select>
+	
+	<select id="selectNCont" resultType="nb">
+	 select * from tbl_inyeon_nboard where nb_num=#{nb_num}
+	</select>
+	
+	<update id="fb_update">
+		update tbl_inyeon_fboard set
+		fb_title=#{fb_title},fb_cont=#{fb_cont},fb_img_url=#{fb_img_url} where
+		fb_num=#{fb_num}
+	</update>
+	
+	<update id="pb_update">
+		update tbl_inyeon_pboard set pb_title=#{pb_title},pb_cont=#{pb_cont},pb_img_url=#{pb_img_url} where pb_num=#{pb_num}
+	</update>
+	
+	<update id="nb_update">
+		update tbl_inyeon_nboard set nb_title=#{nb_title},nb_cont=#{nb_cont},nb_img_url=#{nb_img_url} where nb_num=#{nb_num}
+	</update>
+	
+	<update id="fb_NoImgupdate">
+		update tbl_inyeon_fboard set
+		fb_title=#{fb_title},fb_cont=#{fb_cont} where fb_num=#{fb_num}
+	</update>
+	
+	<update id="pb_NoImgupdate">
+		update tbl_inyeon_pboard set pb_title=#{pb_title},pb_cont=#{pb_cont} where pb_num=#{pb_num}
+	</update>
+	
+	<update id="nb_NoImgupdate">
+		update tbl_inyeon_nboard set nb_title=#{nb_title},nb_cont=#{nb_cont} where nb_num=#{nb_num}
+	</update>
+	
+	
+
+
+	<select id="getflist" resultType="fb">
+		select * from 
+(select rowNum rNum,fb_num,fb_title,fb_cont,fb_hit,fb_date,fb_img_url,email from
+(select * from tbl_inyeon_fboard 
+<where>
+<if test="condition==''">
+</if>
+<if test="condition=='fb_title'">
+fb_title like concat('%'||#{keyword},'%') 
+</if>
+<if test="condition=='fb_cont'">
+fb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='fb_title_cont'">
+fb_title like concat('%'||#{keyword},'%') or fb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='fb_email'">
+  email like #{keyword}
+</if>
+</where>
+order by fb_num desc))
+where rNum &gt;=#{startrow} and rNum &lt;=#{endrow}
+
+	</select>
+
+	<select id="getplist" resultType="pb">
+				select * from 
+(select rowNum rNum,pb_num,pb_title,pb_cont,pb_hit,pb_date,pb_img_url,email from
+(select * from tbl_inyeon_pboard 
+<where>
+<if test="condition==''">
+</if>
+<if test="condition=='pb_title'">
+pb_title like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='pb_cont'">
+pb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='pb_title_cont'">
+pb_title like concat('%'||#{keyword},'%') or pb_cont like concat('%'||#{keyword},'%')
+</if>
+</where>
+order by pb_num desc))
+where rNum &gt;=#{startrow} and rNum &lt;=#{endrow}
+	</select>
+
+	<select id="getnlist" resultType="nb">
+				select * from 
+(select rowNum rNum,nb_num,nb_title,nb_cont,nb_hit,nb_date,nb_img_url,email from
+(select * from tbl_inyeon_nboard
+<where>
+<if test="condition==''">
+</if>
+<if test="condition=='nb_title'">
+nb_title like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='nb_cont'">
+nb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='nb_title_cont'">
+nb_title like concat('%'||#{keyword},'%') or nb_cont like concat('%'||#{keyword},'%')
+</if>
+</where>
+
+ order by nb_num desc))
+where rNum &gt;=#{startrow} and rNum &lt;=#{endrow}
+	</select>
+
+	<select id="F_count" resultType="int">
+	select count(*) from tbl_inyeon_fboard
+	<where>
+<if test="condition=='fb_title'">
+fb_title like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='fb_cont'">
+fb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='fb_title_cont'">
+fb_title like concat('%'||#{keyword},'%') or fb_cont like concat('%'||#{keyword},'%')
+</if>
+</where>
+	</select>
+
+	<select id="P_count" resultType="int">
+		select count(*) from tbl_inyeon_pboard
+		<where>
+<if test="condition=='pb_title'">
+pb_title like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='pb_cont'">
+pb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='pb_title_cont'">
+pb_title like concat('%'||#{keyword},'%') or pb_cont like concat('%'||#{keyword},'%')
+</if>
+</where>
+	</select>
+
+	<select id="N_count" resultType="int">
+		select count(*) from tbl_inyeon_nboard
+		<where>
+<if test="condition=='nb_title'">
+nb_title like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='nb_cont'">
+nb_cont like concat('%'||#{keyword},'%')
+</if>
+<if test="condition=='nb_title_cont'">
+nb_title like concat('%'||#{keyword},'%') or nb_cont like concat('%'||#{keyword},'%')
+</if>
+</where>
+	</select>
+
+
+
+
+	<select id="getusername" resultType="string">
+		select name from
+		tbl_inyeon_user where email=#{email}
+	</select>
+
+	<delete id="fBoardDelete">
+		delete TBL_INYEON_FBOARD where fb_num=#{fb_num}
+	</delete>
+	<delete id="pBoardDelete">
+		delete TBL_INYEON_PBOARD where pb_num=#{pb_num}
+	</delete>
+	<delete id="nBoardDelete">
+		delete TBL_INYEON_NBOARD where nb_num=#{nb_num}
+	</delete>
+
+</mapper>
+

@@ -1,0 +1,204 @@
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+   blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+   em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+   b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+   details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+   output, ruby, section, summary, time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: inherit;
+   /*font:inherit;*/
+   font-style: normal;
+   vertical-align: baseline;
+   font-family: 'NanumBarunGothic', 'sans-serif', 'Malgun Gothic';
+}
+body {
+   line-height: 1;
+   font-weight: 400;
+}
+
+li {
+   list-style: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+a {
+   /* font-size: 0; */
+   text-decoration: none;
+   outline: none;
+   color: inherit;
+}
+/* 珥� 湲� �솕 */
+
+#list_wrap{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+#list_li1{
+	margin-bottom: 20px;
+}
+#list_li1 #li_tit1{
+    display: inline-block;
+    margin-top: 92px;
+    font-size: 45px;
+    font-family: 'Noto Sans KR','NanumBarunGothic','留묒� 怨좊뵓','Malgun Gothic',sans-serif;
+    font-weight: 500;
+    position: relative;
+    
+}
+.list_arrow_right{
+	margin-right:10px;
+	margin-left:10px;
+	font-size: 60px;
+	color: #ccc;
+}
+#li_tit2_on{
+	color: #ec7d2c;
+    padding-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 45px;
+    font-family: 'Noto Sans KR','NanumBarunGothic','留묒� 怨좊뵓','Malgun Gothic',sans-serif;
+    font-weight: 500;
+    position: relative;
+}
+#li_tit2_on #li_tit2_select{
+	width: 388px;
+    position: absolute;
+    left: -29px;
+    top: 62px;
+    border: 1px solid #ec7d2c;
+    background: #fff;
+    z-index: 1;
+    text-align: left;
+    text-indent: 28px;
+    padding: 18px 0;
+}
+
+#li_tit2_select{
+	
+	
+}
+#li_tit_slidcheckBtn{
+	background-color: #FFFF;
+	border:none;
+	outline: none;
+}
+#list_tit_slid_submenuBox{
+	display: inline-block;
+	position: relative;
+}
+#list_tit_slid_submenu{
+	position: absolute;
+	left:-44px;
+	margin-top: 70px;
+	border: 1px solid #ec7d2c;
+    background: #fff;
+    z-index: 1;
+    padding: 18px 0;
+    text-align: center;
+    width:300px;
+}
+.li_title_selecter{
+	display: inline-block;
+    font-size: 24px;
+    color: #777;
+    line-height: 50px;
+    margin:0px 40px;
+}
+
+#li_tit2_updown{
+	font-size:50px;
+	font-weight: 500;
+	color:#ccc;
+	cursor: pointer;
+}
+#list_tot_cntBox{
+	width: 1200px;
+    margin: 0 auto;
+    height: 182px;
+    line-height: 173px;
+    font-size: 19px;
+	color: #333;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-top: 2px solid #333;
+}
+
+#list_main{
+    width: 1300px;
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+    height: 452px;
+}
+.list_img_lazyload{
+	display: flex;
+    width: 1200px;
+    vertical-align: top;
+    margin: 0px auto;
+}
+.list_box_wrap{
+    height: 410px;
+    float:left;
+    margin: 0px 25px;
+}
+.lazyload{
+	cursor: pointer;
+    width: 210px;
+    transition: all 0.3s;
+}
+
+.list_tit_txt{
+    padding-bottom: 9px;
+    font-size: 16px;
+    line-height: 10px;
+    color: #888;
+    padding: 5px 0 5px 0;
+}
+.list-b-tit1{
+	color:#000000;
+}
+.list-b-tit2{
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0px;
+}
+.list_wrap_infoBox{
+	margin:0px 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

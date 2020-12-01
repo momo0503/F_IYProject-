@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.lifetheater.vo.UserVO" alias="u" />
+		<typeAlias type="com.lifetheater.vo.FBoardVO" alias="fb" />
+		<typeAlias type="com.lifetheater.vo.PBoardVO" alias="pb" />
+		<typeAlias type="com.lifetheater.vo.NBoardVO" alias="nb" />
+		<typeAlias type="com.lifetheater.vo.FBoardContVO" alias="fbcont" />
+		<typeAlias type="com.lifetheater.vo.NBoardContVO" alias="nbcont" />
+		<typeAlias type="com.lifetheater.vo.PBoardContVO" alias="pbcont" />
+		<typeAlias type="com.lifetheater.vo.FReplyVO" alias="re" />
+		<typeAlias type="com.lifetheater.vo.FRepContVO" alias="recont" />
+		
+		<typeAlias type="com.lifetheater.vo.UserListVO" alias="ulv" />
+		<typeAlias type="com.lifetheater.vo.BasicTheaterVO" alias="tdvo" />
+		<typeAlias type="com.lifetheater.vo.BasicTheaterListVO" alias="tdlvo" />
+		<typeAlias type="com.lifetheater.vo.TicketingInfoVO" alias="tInfo" />
+		<typeAlias type="com.lifetheater.vo.SupportHelpVO" alias="helpvo"/>
+		<typeAlias type="com.lifetheater.vo.BasicTheaterVO" alias="tdvo"/>
+		<typeAlias type="com.lifetheater.vo.BasicTheaterListVO" alias="tdlvo" />
+		<typeAlias type="com.lifetheater.vo.MergeBasicTheaterTicketInfoVO" alias="mbttvo" />
+		<typeAlias type="com.lifetheater.vo.ReservationVO" alias="rvo" />
+		<typeAlias type="com.lifetheater.vo.TheaterTimeVO" alias="ttvo" />
+	</typeAliases>
+</configuration>

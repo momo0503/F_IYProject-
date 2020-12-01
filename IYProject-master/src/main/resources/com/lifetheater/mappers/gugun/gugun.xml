@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="gugun">
+
+<select id="glist" resultType="tdvo">
+		 select * from basictheater where td_location = #{td_location} and td_check='2'
+	</select>
+<!--  theater_Name -->
+<select id = "g2list" resultType = "ttvo">
+select * from 	
+	(select basictheater.td_title,basictheater.td_location,ticketingInfo.td_no,ticketingInfo.ticketing_no,ticketingInfo.td_runtime,ticketingInfo.td_stgrade,ticketingInfo.td_stprice from 
+ticketingInfo, basictheater where ticketingInfo.td_no = basictheater.td_no) where td_title =#{theater_Name}
+</select>
+
+<select id = "td_no" parameterType = "mbttvo" resultType = "int">
+
+select * from 
+(select basictheater.td_no,basictheater.email,basictheater.td_title,basictheater.td_viewdays,
+basictheater.td_agegrade,basictheater.td_actor,basictheater.td_tinfo,basictheater.td_mainposter,
+basictheater.td_detailposter,basictheater.td_ticketinginfo,basictheater.td_check,
+basictheater.td_signUp_date,basictheater.td_location,ticketingInfo.ticketing_no,
+ticketingInfo.td_runtime,ticketingInfo.td_stgrade,ticketingInfo.td_stprice 
+from basictheater,ticketingInfo where ticketingInfo.td_no = basictheater.td_no) 
+where td_title =#{td_title} and td_location = #{td_location} and td_runtime =#{td_runtime}
+
+ </select>
+
+
+<select id = "mbttvo2" resultType = "mbttvo">
+
+select * from 
+(select basictheater.td_no,basictheater.email,basictheater.td_title,basictheater.td_viewdays,
+basictheater.td_agegrade,basictheater.td_actor,basictheater.td_tinfo,basictheater.td_mainposter,
+basictheater.td_detailposter,basictheater.td_ticketinginfo,basictheater.td_check,
+basictheater.td_signUp_date,basictheater.td_location,ticketingInfo.ticketing_no,
+ticketingInfo.td_runtime,ticketingInfo.td_stgrade,ticketingInfo.td_stprice 
+from basictheater,ticketingInfo where ticketingInfo.td_no = basictheater.td_no) 
+where td_no =#{td_no} and td_runtime=#{td_runtime}
+
+ </select> 
+
+
+<select id = "mbttvo3" resultType = "mbttvo">
+
+select * from 
+(select basictheater.td_no,basictheater.email,basictheater.td_title,basictheater.td_viewdays,
+basictheater.td_agegrade,basictheater.td_actor,basictheater.td_tinfo,basictheater.td_mainposter,
+basictheater.td_detailposter,basictheater.td_ticketinginfo,basictheater.td_check,
+basictheater.td_signUp_date,basictheater.td_location,ticketingInfo.ticketing_no,
+ticketingInfo.td_runtime,ticketingInfo.td_stgrade,ticketingInfo.td_stprice 
+from basictheater,ticketingInfo where ticketingInfo.td_no = basictheater.td_no) 
+where td_no =#{td_no} and td_runtime=#{td_runtime}
+
+ </select> 
+
+
+
+<insert id = "revo" parameterType="rvo">
+
+insert into tbl_inyeon_reservation values (res_seq.nextval,#{td_location},#{td_title},#{td_runtime},#{td_stprice},#{value1},#{totalCost},#{email},sysdate)
+<selectKey resultType="String" keyProperty="pur_date" order="AFTER">
+        SELECT sysdate FROM DUAL
+    </selectKey>
+</insert>
+
+
+
+
+</mapper> 
+
+<!-- <select id="btlist" resultType="tdvo">
+		 select * from basictheater where td_no=#{td_no}
+</select>
+
+<select id="btvo" resultType="tdvo">
+		 select * from basictheater where td_no=#{td_no}
+</select> 
+
+
+<select id="mbttvo" resultType="mbttvo">
+		select * from 
+(select basictheater.td_no,basictheater.email,basictheater.td_title,basictheater.td_viewdays,
+basictheater.td_agegrade,basictheater.td_actor,basictheater.td_tinfo,basictheater.td_mainposter,
+basictheater.td_detailposter,basictheater.td_ticketinginfo,basictheater.td_check,
+basictheater.td_signUp_date,basictheater.td_location,ticketingInfo.ticketing_no,
+ticketingInfo.td_runtime,ticketingInfo.td_stgrade,ticketingInfo.td_stprice 
+from basictheater,ticketingInfo where ticketingInfo.td_no = basictheater.td_no) 
+where td_title =#{td_title} and td_location = #{td_location} and td_runtime =#{td_runtime}
+</select> -->

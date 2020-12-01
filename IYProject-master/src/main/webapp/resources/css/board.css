@@ -1,0 +1,463 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+   blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+   em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+   b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+   details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+   output, ruby, section, summary, time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: inherit;
+   /*font:inherit;*/
+   font-style: normal;
+   vertical-align: baseline;
+   font-family: 'NanumBarunGothic', 'Malgun Gothic','sans-serif';
+}
+body {
+   line-height: 1;
+   font-weight: 400;
+   min-width: 1300px;
+}
+
+li {
+   list-style: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+a {
+   /* font-size: 0; */
+   text-decoration: none;
+   outline: none;
+   color: inherit;
+}
+.clear{clear:both;}
+.board_list{
+	clear: both;
+}
+.board_list_bt {
+	text-align:center;
+	font-size: 30px;
+	/* margin-bottom: 10px; */
+	margin: 20px 0px 0px 0px;
+}
+.board_write_btn{
+	float:right;
+	margin-bottom:3px;
+}
+
+.board_submenu{
+	font: inherit;
+	text-align: center;
+	margin-bottom:50px;
+	
+}
+.board_list_st{
+	display: inline-block;
+	font: inherit;
+	border-right: 1px solid #ccc;
+	margin-right: 5px;
+}
+#board_list_st_last{
+	border:none;
+}
+
+.board_list_wrap, .board_write_wrap, .board_edit_wrap,.board_cont_wrap {
+    padding: 50px 250px 150px 450px;
+    max-width: 1000px;
+}
+
+.board_list_head,
+.board_list_body .board_item {
+    padding: 10px 0;
+    font-size: 0;
+}
+
+.board_list_head {
+    border-top: 2px solid green;
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list_body .board_item {
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list_head > div,
+.board_list_body .board_item > div {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.board_list_head > div {
+    font-weight: 600;
+}
+
+.board_list .board_num {
+    width: 10%;
+}
+
+
+
+.board_list .board_tit {
+    width: 55%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.board_list_body div.board_tit a:hover {
+    text-decoration: underline;
+}
+
+.board_list .board_writer {
+    width: 10%;
+}
+
+.board_list .board_date {
+    width: 15%;
+}
+
+.board_list .board_view {
+    width: 10%;
+}
+
+/* paging */
+.board_paging {
+    margin-top: 70px;
+    text-align: center;
+    position: relative;
+    margin-left:auto;margin-right:auto;
+}
+
+.board_paging a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.board_paging a.board_bt {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    background-image: url(../img/board/page_bt.png);
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    text-indent: -1000px;
+    overflow: hidden;
+}
+
+.board_paging a.board_bt:hover {
+    background-color: #999;
+}
+
+.board_paging a.board_first {
+    background-position: 10px -40px;
+}
+
+.board_paging a.board_prev {
+    margin-right: 5px;
+    background-position: 10px 10px;
+}
+
+.board_paging a.board_next {
+    margin-left: 5px;
+    background-position: -40px 10px;
+}
+
+.board_paging a.board_last {
+    background-position: -40px -40px;
+}
+
+.board_paging a.board_num {
+    margin: 0 5px;
+}
+
+.board_paging a.board_num.on {
+    color: green;
+}
+
+.board_paging a.board_num:hover {
+    text-decoration: underline;
+}
+
+.board_write_title, .board_edit_title{
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+.board_search_form{
+	margin-top:20px;
+	margin-left: 40px;
+	float:right;
+	display: flex;
+}
+.board_search_form #board_search{
+	width: 50%;
+}
+.board_search_form #board_select_list{
+	margin-left: 5px;margin-right: 5px;
+}
+
+/* write ���� */
+
+#board_title{
+	width: 892px;
+	margin-bottom:20px;
+	border: 1px solid #ebecef;
+}
+.note-editor.note-frame{
+		border: 1px solid #ebecef;
+}
+#board_title:active{
+	border: none;
+		outline: 1px solid #ebecef;
+}
+#board_title:focus{
+	border: none;
+	outline: 1px solid #ebecef;
+}
+
+#board_write_btmbtn, #board_edit_btmbtn{
+	width: 900px;
+	margin-top:10px;
+}
+#board_write_submitbtn, #board_write_listbtn,#board_edit_cancel,#board_edit_com{
+	float: right;
+	margin-right: 5px;
+}
+
+
+/*�Խ��� ����*/
+.board_contentBox{
+	padding: 29px 29px 29px 29px;
+  border: 1px solid rgb(0 0 0 / 17%);
+  width:840px;
+  border-radius: 6px;
+}
+#board_cont_header{
+	margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebecef;
+}
+#board_cont_title{
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom:14px;
+}
+#board_cont_profile{
+	display:inline-block;
+}
+#board_cont_nameBox{
+	margin-bottom:9px;
+	font-size: 13px;
+	font-weight: 700;
+}
+#board_cont_uploadDate,#board_cont_hitCount{
+	font-size: 12px;
+	color: #979797;
+	margin-right:12px;
+}
+#board_cont_comCount{
+	font-size: 12px;
+	color: #979797;
+}
+#board_cont_content{
+	margin-bottom:40px;
+}
+
+#board_cont_comCount2{
+	margin-bottom: 15px;
+	line-height: 19px;
+	font-size: 15px;
+	padding-bottom: 10px;
+  border-bottom: 1px solid #ebecef;
+}
+#board_cont_comment_tab{
+	display: inline-block;
+}
+#board_cont_comment_tab{
+  color: #b7b7b7;
+  font-weight: 700;
+  font-size: 13px;
+}
+#board_cont_lastbtn{
+	margin-right:5px;
+}
+.board_cont_commentOne{
+	padding: 12px 23px 10px 0;
+}
+#board_cont_comment_option{
+	padding-top: 16px;
+  margin-bottom: 11px;
+}
+.board_cont_commentArea{
+	padding: 12px 23px 10px 0;
+}
+.board_cont_comment_nickBox{
+	margin-bottom: 4px;
+}
+
+.board_cont_comment_nickname{
+	font-weight: 700;
+}
+.board_cont_comment_contBox{
+	font-size: 15px;
+}
+.board_cont_comment_infoBox{
+	margin-top: 7px;
+  font-size: 12px;
+  color: #979797;
+}
+.board_cont_comment_info_date{
+	margin-right:8px;
+}
+.board_cont_comment_info_button{
+	
+}
+
+.board_cont_comment_commentWriter{
+	margin-top: 10px;
+	margin: 12px 0 29px;
+  padding: 16px 10px 10px 18px;
+  border: 2px solid rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #fff;
+}
+.board_cont_comment_inboxName{
+	display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.board_cont_comment_inbox_text{
+
+  overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    width: 100%;
+    min-height: 17px;
+    padding-right: 1px;
+    border: 0;
+    font-size: 13px;
+    -webkit-appearance: none;
+    resize: none;
+    box-sizing: border-box;
+    background: transparent;
+    color: #000;
+    outline: 0;
+}
+
+
+.board_cont_comment_inbox_text::placeholder{
+	color: rgb(0 0 0 / 10%);
+}
+.board_cont_comment_attach_picture{
+	display: inline-block;
+}
+.board_cont_comment_inbox_upload{
+	margin-top: 8px;
+}
+.board_cont_comment_register_box{
+	  display: inline-block;
+	  float:right;
+    min-width: 46px;
+    height: 34px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #b7b7b7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+}
+.board_cont_listbtn, .board_cont_delbtn,.board_cont_editbtn{
+	float:right;
+	margin-bottom:7px;
+}
+.board_cont_delbtn{
+	margin-right:5px;margin-left:5px;
+}
+
+.board_cont_comment_inbox_text::placeholder {
+  color: gray;
+}
+
+.board_cont_comment_info_button:hover{
+	cursor: pointer;
+}
+#board_rep_cont,#board_rep_name,#board_rep_arpa,.board_cont_rep_rep_name,.board_cont_rep_rep_cont{
+	font-size: 13px;
+  color: #979797;
+}
+.board_cont_rep_info{
+	margin-bottom:7px;
+}
+.board_cont_rep_rep_cont{
+	margin-left: 2px;
+}
+#board_req_cancle{
+	font-size: 13px;
+  color: #b1b1b1eb;
+  cursor: pointer;
+  margin-right:2px;
+}
+
+.is_active:hover{
+		font-size: 13px;
+  color: #b1b1b1eb;
+  cursor: pointer;
+}
+
+
+
+.admin_board_name {
+	width:10%;
+}
+.admin_board_Tname{
+	width:15%;
+}
+.admin_board_email{
+	width:10%;
+}
+.admin_board_phone{
+	width:20%;
+}
+.admin_board_date{
+	width:20%;
+}
+.admin_board_membershipCh{
+	width:15%
+}
+.admin_board_membership{
+	width:15%
+}
+.admin_board_belong{
+	width:10%;
+}
+#board_cont_lastbtn:hover ,#board_cont_firstbtn:hover{
+	cursor: pointer;
+}
+.board_cont_Act{
+	color: black;
+}
+.admin_board_SignUpDate{
+	width:10%;
+}
+.admin_board_Ttitle{
+	width:20%;
+}
+
+
+
+
+
+
+  
+   
+   
+   

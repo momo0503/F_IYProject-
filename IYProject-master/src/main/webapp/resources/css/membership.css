@@ -1,0 +1,220 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+   blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+   em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+   b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+   details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+   output, ruby, section, summary, time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: inherit;
+   /*font:inherit;*/
+   font-style: normal;
+   vertical-align: baseline;
+   font-family: 'NanumBarunGothic','Malgun Gothic','sans-serif';
+}
+body {
+   line-height: 1;
+   font-weight: 400;
+}
+
+li {
+   list-style: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+a {
+   /* font-size: 0; */
+   text-decoration: none;
+   outline: none;
+   color: inherit;
+}
+
+.btn-l { /*지우면 안대 -- 회원가입 버튼 크기*/
+	height: 48px;
+	line-height: 45px;
+	padding: 0 24px;
+	font-size: 16px
+}
+
+
+
+.btn-point, .btn.active { /*지우면 안대 -- 회원가입버튼 색*/
+	color: #fff;
+	background: #E95753;
+	border: 1px solid #e95753
+}
+
+.btn-point:hover, .btn.active:hover { /*회원가입버튼 호버시*/
+	background: #c8352e
+}
+
+
+.form-block { /*지우면안대  -- 라벨(이메일등) 왼쪽처리 */
+	text-align: left;
+	margin: 20px 0 0
+}
+.input-text input { /*지우면 안대 -- 입력박스 처리*/
+	background: #fff;
+	font-size: 12px;
+	line-height: 16px;
+	border: 1px solid #acacac;
+	width: 100%;
+	height: 32px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 2px 8px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none
+}
+
+
+.input-checkbox { /*지우면 안대 -- 체크박스*/
+	display: inline-block
+}
+
+.bp[type=checkbox] { /*지우면 안되 -- 체크박스 위치 및 연결*/
+	-moz-appearance: none;
+	-ms-progress-appearance: none;
+	-webkit-appearance: none;
+	background: transparent;
+	display: inline-block;
+	position: relative;
+	height: 18px;
+	width: 18px;
+	vertical-align: middle;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 0;
+	margin: 0
+}
+
+.bp[type=checkbox]:before { /*지우면 안대 -- 체크박스 설정 ,체크전 */
+	cursor: pointer;
+	content: '';
+	display: inline-block;
+	font-size: 16px;
+	line-height: 18px;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: 1px solid #888;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff
+}
+
+.bp[type=checkbox]:checked:before { /*지우면 안대 -- 체크 후*/
+	content: '\2713';
+	border: 1px solid #dd5850;
+	background-color: #dd5850
+}
+
+.tab-control-style2:after {
+	content: '';
+	clear: both
+}
+
+.tab-control-style2 a {
+	text-align: center;
+	position: relative;
+	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 8.33333%;
+	border: 1px solid #d9d9d9;
+	border-left: 0 none;
+	border-bottom: 0 none;
+	color: #acacac;
+	font-size: 12px;
+	padding: 13px 0;
+	font-weight: bold
+}
+
+.tab-control-style2.to-dropdown a {
+	text-align: center;
+	position: relative;
+	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 9.09091%;
+	border: 1px solid #d9d9d9;
+	border-left: 0 none;
+	border-bottom: 0 none;
+	color: #acacac;
+	font-size: 12px;
+	padding: 13px 0;
+	font-weight: bold
+}
+.terms-item .label{
+/* 	font-family: inherit;
+	font-size: inherit;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: inherit */
+	color: inherit;
+}
+
+.login.wrap .form{ /*지우면 안대 -- 폼 좌우 중앙처리 */
+	width: 500px;
+	display: block;
+	margin: 0 auto
+}
+
+
+.input-text{/*지우면 안대 -- 라벨밑 공백*/
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	text-align: left
+}
+
+.input-text input{/*지우면 안대 -- 입력박스 크기*/
+	font-size: 14px;
+	height: 48px
+}
+
+.login.section { /*지우면 안되 -- 맨위 선넣기 */
+	text-align: center;
+	margin-top: 50px;
+}
+.signup-step{
+	margin-bottom: 35px;
+}
+
+.login.title { /*지우면 안되 -- 선중앙에 글씨 넣기*/
+	font-size: 30px;
+	color: #333;
+	text-align: center;
+	position: relative;
+	top: -10px;
+	background: #fafafa;
+	display: inline-block;
+	padding: 0 10px
+}
+
+
+.btn-login { /*지우면 안되*/
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	font-size: 16px
+}

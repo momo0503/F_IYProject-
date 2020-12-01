@@ -1,0 +1,146 @@
+<?
+xml version ="1.0 " encoding ="UTF-8 "?>html, body, div, span, applet,
+	object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+	acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s,
+	samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+	dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+	tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,
+	section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: inherit;
+	/*font:inherit;*/
+	font-style: normal;
+	vertical-align: baseline;
+	font-family: 'NanumBarunGothic', 'sans-serif', 'Malgun Gothic';
+}
+
+body {
+	line-height: 1;
+	font-weight: 400;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	/* font-size: 0; */
+	text-decoration: none;
+	outline: none;
+	color: inherit;
+}
+/* 초 기 화 */
+.detail_title_box {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 55px;
+	position: relative;
+	border-bottom: 2px solid #333;
+}
+
+.running_time {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 55px;
+	position: relative;
+	border-bottom: 2px solid #333;
+}
+
+.detail_title_name {
+	margin-top: 16px;
+	position: relative;
+	margin: 0px 20px 0px 0px;
+}
+
+.detail_title_days {
+	font-size: 15px;
+	color: #666;
+	position: relative;
+}
+
+p {
+	margin: 0px 20px 0px 0px;
+}
+
+.detail_wrap_box {
+	padding-top: 0;
+	margin-top: 0px;
+}
+
+.detail_wrap_content {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.detail_top_view {
+	margin-top: 40px;
+	overflow: hidden;
+	padding-bottom: 50px;
+	position: relative;
+}
+
+.detail_image_p {
+	width: 430px;
+	height: 600px;
+	position: relative;
+	display: inline-block;
+}
+
+.detail_images_box {
+	width: 430px;
+	height: 602px;
+}
+
+.detail_top_right {
+	float: right;
+	width: 701px;
+}
+
+.detail_top_right_product {
+	border-bottom: 1px solid #000;
+	position: relative;
+}
+
+.detail_top_right dl {
+	overflow: hidden;
+}
+
+.detail_top_right dt {
+	font-size: 15px;
+	color: #333;
+	font-weight: bold;
+	float: left;
+	line-height: 35px;
+}
+
+.detail_top_right dd {
+	font-size: 15px;
+	color: #333;
+	clear: right;
+	margin: 0 0 3px 86px;
+	line-height: 35px;
+	position: relative;
+}
+
+.detail_top_right_down {
+	min-height: 174px;
+	border-bottom: 1px solid #000;
+}
+
+.detail_body_view {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+

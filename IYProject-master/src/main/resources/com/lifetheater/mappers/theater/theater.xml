@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="theater">
+	<insert id="tdvo_insert">
+		insert into basictheater values(seq_td_no.nextval,#{email},#{td_title},#{td_viewdays},#{td_agegrade},#{td_actor},#{td_tinfo},#{td_mainposter},#{td_detailposter},#{td_ticketinginfo},1,sysdate,#{td_location})
+		<selectKey resultType="int" keyProperty="td_no" order="AFTER">
+        SELECT seq_td_no.CURRVAL FROM DUAL
+    </selectKey>
+	</insert>
+	
+	<select id="gettdlist" resultType="tdvo">
+		select td_no,td_title,td_viewdays,td_mainposter,td_location from basictheater where td_check='2' order by td_no desc
+	</select>
+	
+	<select id="tdvo_list">
+		
+	
+	</select>
+	<update id="tdvo_update">
+		
+	
+	</update>
+	<delete id="tdvo_delete">
+	
+	
+	</delete>
+	
+	<select id="selectTDCONT" resultType="tdvo">
+		select * from basictheater where td_no=#{td_no}
+	</select>
+	
+	<insert id="kicketInsert">
+		insert into ticketingInfo values(#{td_no},seq_ticketing_no.nextval,#{td_runtime},#{td_stgrade},#{td_stprice})
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
