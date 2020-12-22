@@ -38,7 +38,7 @@
 		<property name="jdbcUrl"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="username" value="week" />
-		<property name="password" value="week" />
+		<property name="password" value="abc" />
 	</bean>
 
 	<!-- 데이터 소스 객체 빈 등록 -->
@@ -108,6 +108,7 @@
 			</props>
 		</property>
 	</bean>  
+	
 		<!-- 회원가입 메일 인증 -->
 <!-- 	<beans:bean id="mailSender"	class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<beans:property name="host" value="smtp.gmail.com" />
